@@ -15,13 +15,32 @@ function showSlides() {
   setTimeout(showSlides, 5000); // Change image every 2 seconds
 }
 
-// const observer = new IntersectionObserver((entries) => {
-//   entries.forEach((entry) => {
-//     if (entry.isIntersecting) {
-//       // It's visible. Add the animation class here!
-//       entry.target.classList.add("titled");
-//     }
-//   });
-// });
+function myFunction() {
+  var x = document.getElementById("path");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
 
-// observer.observe(document.querySelector(".service-line"));
+const addStickyNav = () => {
+  let header = document.getElementById("main_nav");
+  let mobile_header = document.getElementById("mobile_nav");
+  if (header) {
+    header.classList.toggle("fixed-top", window.scrollY > 50);
+    header.classList.toggle("nav-bg", window.scrollY > 50);
+  }
+
+  if (mobile_header) {
+    mobile_header.classList.toggle("fixed-top", window.scrollY > 50);
+  }
+};
+
+window.addEventListener("scroll", addStickyNav);
+
+var nav_items = document.querySelectorAll(".nav-item");
+
+nav_items.forEach((item) => {
+  item.addEventListener("click", myFunction);
+});

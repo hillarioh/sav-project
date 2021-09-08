@@ -19,12 +19,13 @@
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles/style.css" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body>
     <header class="position-absolute">
-      <nav class="d-flex justify-content-between px-5 border-bottom">
+      <nav class="d-none d-md-flex justify-content-between px-5 border-bottom">
         <div class="d-flex">
           <div class="border-start px-3 py-2">
             <i class="far fa-envelope green"></i>
@@ -47,33 +48,61 @@
           </li>
         </ul>
       </nav>
-      <nav class="d-flex justify-content-between px-5 py-4">
-        <a href="/" class="ps-4">SAVUCOM</a>
+      <nav
+        class="d-none d-md-flex justify-content-between px-5 py-3"
+        id="main_nav"
+      >
+        <a href="/" class="ps-4"
+          ><img
+            class="sv-logo"
+            src="./images/savcom-logo.png"
+            alt="savucom logo"
+            srcset=""
+        /></a>
         <ul class="list-unstyled d-flex m-0">
           <li class="px-2"><a href="/">Home</a></li>
-          <li class="px-2"><a href="/">About Us</a></li>
-          <li class="px-2"><a href="/">Services</a></li>
-          <li class="px-2"><a href="/">Contact</a></li>
+          <li class="px-2"><a href="#about">About Us</a></li>
+          <li class="px-2"><a href="#services">Services</a></li>
+          <li class="px-2"><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <nav class="nav1 d-flex d-md-none flex-column nav-bg" id="mobile_nav">
+        <div class="d-flex justify-content-between align-items-center p-4">
+          <a href="/"
+            ><img
+              class="sv-logo"
+              src="./images/savcom-logo.png"
+              alt="savucom logo"
+              srcset=""
+          /></a>
+          <i class="fas fa-bars toggle" onclick="myFunction()"></i>
+        </div>
+        <ul class="list-group" id="path">
+          <li class="list-group-item">
+            <a href="/" class="fs-5 nav-item">Home</a>
+          </li>
+          <li class="list-group-item nav-item">
+            <a href="#about" class="fs-5">About Us</a>
+          </li>
+          <li class="list-group-item nav-item">
+            <a href="#services" class="fs-5">Services</a>
+          </li>
+          <li class="list-group-item nav-item">
+            <a href="#contact" class="fs-5">Contact</a>
+          </li>
         </ul>
       </nav>
     </header>
     <main>
       <section class="banner position-relative">
-        <!-- <div class="ps-4 position-absolute bottom-0 mb-5">
-          <h5 class="">Welcome to</h5>
-          <h2 class="">SAVUCOM</h2>
-          <h4>EAST AFRICA COMMUNICATIONS AGENCIES</h4>
-        </div> -->
-        <!-- Slideshow container -->
-
         <div class="mySlideshow">
           <!-- Full-width images with number and caption text -->
           <div class="mySlides myFade">
             <div class="text">
               <div class="ms-5 text-overlay p-3 d-flex flex-column titled">
-                <h5 class="">Welcome to</h5>
-                <h2 class="">SAVUCOM</h2>
-                <h4>EAST AFRICA COMMUNICATIONS AGENCIES</h4>
+                <h5 class="fw-bolder">Welcome to</h5>
+                <h2 class="fw-bold light-green">SAVUCOM</h2>
+                <h4 class="">EAST AFRICA COMMUNICATIONS AGENCIES</h4>
               </div>
             </div>
           </div>
@@ -81,7 +110,10 @@
           <div class="mySlides myFade">
             <div class="text">
               <div class="ms-5 text-overlay p-3 d-flex flex-column titled">
-                <h4>Property Management and Cleaning Services</h4>
+                <h2>
+                  Property Management <br />
+                  and Cleaning Services
+                </h2>
               </div>
             </div>
           </div>
@@ -89,7 +121,7 @@
           <div class="mySlides myFade">
             <div class="text">
               <div class="ms-5 text-overlay p-3 d-flex flex-column titled">
-                <h4>ICT Products and ICT Services</h4>
+                <h2>ICT Products and ICT Services</h2>
               </div>
             </div>
           </div>
@@ -97,7 +129,10 @@
           <div class="mySlides myFade">
             <div class="text">
               <div class="ms-5 text-overlay p-3 d-flex flex-column titled">
-                <h4>Farm and Dairy Products and Services</h4>
+                <h2>
+                  Farm, Dairy Products <br />
+                  and Services
+                </h2>
               </div>
             </div>
           </div>
@@ -105,16 +140,19 @@
           <div class="mySlides myFade">
             <div class="text">
               <div class="ms-5 text-overlay p-3 d-flex flex-column titled">
-                <h4>Travel, Tours, and Delivery Services</h4>
+                <h2>
+                  Travel, Tours, and <br />
+                  Delivery Services
+                </h2>
               </div>
             </div>
           </div>
         </div>
         <br />
       </section>
-      <section class="about p-5">
+      <section class="about p-1 p-md-5" id="about">
         <h3 class="text-center green text-decoration-underline">ABOUT US</h3>
-        <p class="m-auto">
+        <p class="m-0 p-2 me-0 m-md-auto">
           <b>Savucom East Africa Communication Agencies (SEACA)</b> is a
           full-scope agency that specializes in major services and
           infrastructure development to help business maneuver the modern
@@ -139,7 +177,7 @@
         </p>
       </section>
       <section class="why-choose ps-md-5 py-5 row m-0">
-        <div class="col-sm-9 ps-md-5 mt-5 pt-5">
+        <div class="col-sm-9 ps-md-5 mt-md-5 pt-5">
           <h3>Why choose</h3>
           <h3>Savucom</h3>
           <p class="m-0">
@@ -148,7 +186,7 @@
             collaboration between our team and our clients’, which is our core
             differentiator.
           </p>
-          <div class="d-flex mt-5">
+          <div class="d-flex flex-column flex-md-row mt-5">
             <div class="px-3" data-aos="fade-right">
               <div
                 class="
@@ -191,11 +229,18 @@
           <img src="images/sidepane.png" />
         </div>
       </section>
-      <section class="advantage p-5">
+      <section class="advantage p-1 p-md-5">
         <h3 class="text-center green fw-bold">Our Advantage</h3>
         <div class="m-auto">
           <div class="row" data-aos="fade-up" data-aos-duration="3000">
-            <div class="col-3 d-flex justify-content-end">
+            <div
+              class="
+                col-3
+                d-flex
+                p-0
+                justify-content-center justify-content-md-end
+              "
+            >
               <div class="dot d-flex justify-content-center align-items-center">
                 <div class=""></div>
               </div>
@@ -209,7 +254,14 @@
             </p>
           </div>
           <div class="row" data-aos="fade-up" data-aos-duration="3000">
-            <div class="col-3 d-flex justify-content-end">
+            <div
+              class="
+                col-3
+                d-flex
+                p-0
+                justify-content-center justify-content-md-end
+              "
+            >
               <div class="dot d-flex justify-content-center align-items-center">
                 <div class=""></div>
               </div>
@@ -223,7 +275,14 @@
             </p>
           </div>
           <div class="row" data-aos="fade-up" data-aos-duration="3000">
-            <div class="col-3 d-flex justify-content-end">
+            <div
+              class="
+                col-3
+                d-flex
+                p-0
+                justify-content-center justify-content-md-end
+              "
+            >
               <div class="dot d-flex justify-content-center align-items-center">
                 <div class=""></div>
               </div>
@@ -239,7 +298,7 @@
           </div>
         </div>
       </section>
-      <section class="services p-5">
+      <section class="services p-2 p-md-5" id="services">
         <h3 class="fs-2 fw-bolder text-center">Our Services</h3>
         <div class="row service-line">
           <div
@@ -438,20 +497,27 @@
         </div>
       </section>
     </main>
-    <footer class="footer p-5">
+    <footer class="footer p-5" id="contact">
       <div>
         <h3 class="fw-bold mb-5">Let’s talk</h3>
         <div class="mb-2">
-          <h5>OUR LOCATION</h5>
+          <h5 class="text-decoration-underline">OUR LOCATION</h5>
           <p>Senior Park, Naivasha Road Nairobi, Kenya</p>
         </div>
         <div class="mb-2">
-          <h5>CONTACT</h5>
-          <p>Tel: +254779251904/+254733996500/+254779787687</p>
+          <h5 class="text-decoration-underline">CONTACT</h5>
+          <div class="d-flex">
+            <div class="me-3">Tel:</div>
+            <div class="d-md-flex">
+              <p class="me-md-2">+254779251904</p>
+              <p class="me-md-2">+254733996500</p>
+              <p class="me-md-2">+254779787687</p>
+            </div>
+          </div>
           <p>Email: savucomeast@yahoo.com</p>
         </div>
         <div class="mb-2">
-          <h5>OTHER BRANCHES</h5>
+          <h5 class="text-decoration-underline">OTHER BRANCHES</h5>
           <p>
             Keroka town, Kisii Town. Maani Town, Sirare Town, Narock Town,
             Kakamega Town, Suneka Town, Mombasa City, Satelite Riruta Nairobi
